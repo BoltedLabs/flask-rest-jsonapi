@@ -130,7 +130,7 @@ class ResourceList(with_metaclass(ResourceMeta, Resource)):
 
         result = schema.dump(objects).data
 
-        view_kwargs = request.view_args if getattr(self, 'view_kwargs', None) is True else dict()
+        view_kwargs = request.view_args if getattr(self, 'view_args', None) is True else dict()
         add_pagination_links(result,
                              objects_count,
                              qs,
